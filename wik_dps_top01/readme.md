@@ -11,3 +11,7 @@ The default Port will be : ```8080```
     - PING_LISTEN_PORT=9090 cargo run
 
 ```9090``` is an exemple, you can choice the port between 1000 and 65536
+
+## What is the project
+
+The project is an simple route of an API in Rust on: ```localhost:8080/ping``` who return the header of the page
