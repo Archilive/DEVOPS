@@ -1,0 +1,14 @@
+FROM rust:latest
+
+WORKDIR /var/app
+
+COPY . /var/app
+
+RUN useradd -m myuser
+RUN chown -R myuser:myuser /var/app
+USER myuser
+
+CMD cargo run
+
+
+
