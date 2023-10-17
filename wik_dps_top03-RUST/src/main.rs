@@ -19,7 +19,7 @@ fn handle_client(mut stream: TcpStream) -> Result<(), Error> {
         headers.push_str(&line.trim());
     }
 
-    let response = if headers.starts_with("GET /ping HTTP/1.1") {
+    let response = if headers.starts_with("GET /ping") {
         // Convert the headers to JSON
         let json_response = json!({
             "headers": headers.trim()
