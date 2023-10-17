@@ -1,0 +1,10 @@
+FROM rust:latest as builder
+COPY . /var/app
+WORKDIR /var/app
+RUN cargo build --release
+
+FROM debian
+COPY --from=builder /var/app/target/release/wik-dps-tp02 /var/app/target/release/app2
+WORKDIR /var/app/target/release
+CMD ["./app2"]
+
