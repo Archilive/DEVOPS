@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: echo-ingress
+  namespace: tp
+spec:
+  rules:
+    - host: archi.local  # Choisissez un nom de domaine local de votre choix
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: echo-service
+                port:
+                  number: 8080
+
+
